@@ -1,0 +1,14 @@
+node {
+    stage ('gitclone') {
+      // git clone
+      git 'https://github.com/Bahmni/bahmni-core.git'
+    }  
+    stage ('build the packages') {
+      // mvn package
+      sh 'mvn package'
+    }
+    //stage ('artifects'){
+        // archiving artifects
+    //   archive 'target*.jar'
+    }
+}
